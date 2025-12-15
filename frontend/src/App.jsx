@@ -17,10 +17,15 @@ function App() {
     <>
     <NavBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <Routes>
-        <Route path="/rating" element={isAuthenticated ? (<Home searchTerm={searchTerm}/>) : (<Navigate to="/login" replace />)} />
-        <Route path="/home" element={isAuthenticated ? (<Start searchTerm={searchTerm}/>) : (<Navigate to="/login" replace />)} />
+        <Route path="/rating" element={(<Home searchTerm={searchTerm}/>)} />
+        <Route path="/home" element={(<Start searchTerm={searchTerm}/>)} />
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="*" element={<Navigate to={isAuthenticated ? "/home" : "/login"} replace />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
+        {/* Login Page check */}
+        {/*<Route path="/rating" element={isAuthenticated ? (<Home searchTerm={searchTerm}/>) : (<Navigate to="/login" replace />)} />*/}
+        {/*<Route path="/home" element={isAuthenticated ? (<Start searchTerm={searchTerm}/>) : (<Navigate to="/login" replace />)} />*/}
+        {/*<Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />*/}
+        {/*<Route path="*" element={<Navigate to={isAuthenticated ? "/home" : "/login"} replace />} />*/}
       </Routes>
     </>
   );

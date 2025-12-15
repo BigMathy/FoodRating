@@ -10,7 +10,7 @@ export default function Login({ setIsAuthenticated }) {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (username === "Schneggi" && password === "LoveYou") {
+    if (username === "admin" && password === "passwort") {
       localStorage.setItem("auth", "true");
       setIsAuthenticated(true);
       navigate("/home");
